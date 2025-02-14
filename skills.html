@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compétences - Portfolio Naoufal</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .skills {
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(to right, #1e1e1e, #181818);
+            border-radius: 10px;
+            width: 80%;
+            margin: 40px auto;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .skill-category {
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .skill-category:hover {
+            transform: scale(1.05);
+        }
+
+        h3 {
+            color: #0073e6;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 5px;
+            margin: 5px 0;
+            color: #fff;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Compétences</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="about.html">À Propos</a></li>
+                <li><a href="projects.html">Projets</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="skills">
+        <h2>Mes compétences</h2>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>💻 Développement</h3>
+                <ul>
+                    <li>Java, C, C++, Python, SQL</li>
+                    <li>HTML, CSS, JavaScript, PHP</li>
+                    <li>Développement d'API REST</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>🛠 Outils & Technologies</h3>
+                <ul>
+                    <li>Git, MySQL, phpMyAdmin</li>
+                    <li>IntelliJ IDEA, Visual Studio Code, Eclipse</li>
+                    <li>Postman, GraphQL, Docker</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>🎮 Développement de Jeux</h3>
+                <ul>
+                    <li>Unity (C#), Unreal Engine (Blueprints)</li>
+                    <li>Modélisation UML avec Visual Paradigm</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>🌍 Langues</h3>
+                <ul>
+                    <li>Français : Langue maternelle</li>
+                    <li>Anglais : Intermédiaire (B2)</li>
+                    <li>Espagnol : Scolaire</li>
+                    <li>Arabe : Courant</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Naoufal Bouladjeraf</p>
+    </footer>
+</body>
+</html>

@@ -6,38 +6,86 @@
     <title>Compétences - Portfolio Naoufal</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        .skills {
+        /* ======== GLOBAL STYLES ======== */
+        body {
+            background: radial-gradient(circle at top left, #ffffff, #f0f9ff);
+            color: #0044cc;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
             text-align: center;
-            padding: 50px;
-            background: linear-gradient(to right, #1e1e1e, #181818);
-            border-radius: 10px;
-            width: 80%;
-            margin: 40px auto;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            animation: fadeIn 1s ease-in-out;
         }
 
+        /* ======== HEADER ======== */
+        header {
+            background: #0044cc;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background: #0033aa;
+        }
+
+        /* ======== SKILLS SECTION ======== */
         .skills-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
-            margin-top: 20px;
+            padding: 50px;
+            justify-items: center;
         }
 
         .skill-category {
-            background: #222;
+            background: #e6f7ff;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+            position: relative;
+            overflow: hidden;
         }
 
         .skill-category:hover {
             transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 204, 153, 0.5);
+            background: #ccffee;
         }
 
-        h3 {
-            color: #0073e6;
+        .category-title {
+            font-size: 1.5rem;
+            color: #00cc99;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .category-title i {
+            font-size: 1.8rem;
         }
 
         ul {
@@ -46,78 +94,105 @@
         }
 
         ul li {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 10px;
+            background: rgba(0, 68, 204, 0.1);
+            padding: 12px;
             border-radius: 5px;
             margin: 5px 0;
-            color: #fff;
+            color: #0044cc;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
+        ul li:hover {
+            transform: scale(1.05);
+            background: rgba(0, 204, 153, 0.3);
+        }
+
+        /* ======== FOOTER ======== */
+        footer {
+            background-color: #0044cc;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 50px;
+            border-top: 3px solid #00cc99;
+        }
+
+        @media screen and (max-width: 768px) {
+            .skills-container {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                padding: 20px;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Compétences</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="about.html">À Propos</a></li>
-                <li><a href="projects.html">Projets</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <h1>✨ Compétences</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="about.html">À Propos</a></li>
+            <li><a href="projects.html">Projets</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <section class="skills">
-        <h2>Mes compétences</h2>
-        <div class="skills-container">
-            <div class="skill-category">
-                <h3>💻 Développement</h3>
-                <ul>
-                    <li>Java, C, C++, Python, SQL</li>
-                    <li>HTML, CSS, JavaScript, PHP</li>
-                    <li>Développement d'API REST</li>
-                </ul>
-            </div>
-            <div class="skill-category">
-                <h3>🛠 Outils & Technologies</h3>
-                <ul>
-                    <li>Git, MySQL, phpMyAdmin</li>
-                    <li>IntelliJ IDEA, Visual Studio Code, Eclipse</li>
-                    <li>Postman, GraphQL, Docker</li>
-                </ul>
-            </div>
-            <div class="skill-category">
-                <h3>🎮 Développement de Jeux</h3>
-                <ul>
-                    <li>Unity (C#), Unreal Engine (Blueprints)</li>
-                    <li>Modélisation UML avec Visual Paradigm</li>
-                </ul>
-            </div>
-            <div class="skill-category">
-                <h3>🌍 Langues</h3>
-                <ul>
-                    <li>Français : Langue maternelle</li>
-                    <li>Anglais : Intermédiaire (B2)</li>
-                    <li>Espagnol : Scolaire</li>
-                    <li>Arabe : Courant</li>
-                </ul>
-            </div>
+<h2>Mes compétences</h2>
+<section class="skills-container">
+    <div class="skill-category">
+        <div class="category-title">
+            <i>💻</i> <span>Développement</span>
         </div>
-    </section>
+        <ul>
+            <li>Java, C, C++, Python, SQL</li>
+            <li>HTML, CSS, JavaScript, PHP</li>
+            <li>Développement d'API REST</li>
+        </ul>
+    </div>
 
-    <footer>
-        <p>&copy; 2025 Naoufal Bouladjeraf</p>
-    </footer>
+    <div class="skill-category">
+        <div class="category-title">
+            <i>🛠</i> <span>Outils & Technologies</span>
+        </div>
+        <ul>
+            <li>Git, MySQL, phpMyAdmin</li>
+            <li>IntelliJ IDEA, VS Code, Eclipse</li>
+            <li>Postman, GraphQL, Docker</li>
+        </ul>
+    </div>
+
+    <div class="skill-category">
+        <div class="category-title">
+            <i>🎮</i> <span>Développement de Jeux</span>
+        </div>
+        <ul>
+            <li>Unity (C#), Unreal Engine (Blueprints)</li>
+            <li>Modélisation UML avec Visual Paradigm</li>
+        </ul>
+    </div>
+
+    <div class="skill-category">
+        <div class="category-title">
+            <i>🌍</i> <span>Langues</span>
+        </div>
+        <ul>
+            <li>Français : Langue maternelle</li>
+            <li>Anglais : Intermédiaire (B2)</li>
+            <li>Espagnol : Scolaire</li>
+            <li>Arabe : Courant</li>
+        </ul>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Naoufal Bouladjeraf</p>
+</footer>
+
 </body>
 </html>

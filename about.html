@@ -5,35 +5,251 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>À Propos - Portfolio Naoufal</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ======= GLOBAL STYLES ======= */
+        body {
+            background: #ffffff;
+            color: #0044cc;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* ======= HEADER ======= */
+        header {
+            background: #0044cc;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background: #0033aa;
+        }
+
+        /* ======= ABOUT SECTION ======= */
+        .about {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .about-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            background: #e6f7ff;
+            padding: 40px;
+            border-radius: 15px;
+            width: 70%;
+            margin: auto;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 3px solid #00cc99;
+            object-fit: cover;
+        }
+
+        .about-text {
+            text-align: left;
+            max-width: 600px;
+        }
+
+        .about-text h2 {
+            color: #0044cc;
+            font-size: 2em;
+        }
+
+        /* ======= SOCIAL LINKS ======= */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            text-decoration: none;
+            background: #00cc99;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+            font-size: 1.1em;
+        }
+
+        .social-links a:hover {
+            background: #009973;
+        }
+
+        /* ======= EXPERIENCE SECTION ======= */
+        .experience {
+            width: 70%;
+            margin: auto;
+            background: #e6f7ff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .experience h2 {
+            text-align: center;
+            color: #0044cc;
+            font-size: 2em;
+        }
+
+        .experience ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .experience li {
+            background: rgba(0, 204, 153, 0.2);
+            padding: 12px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        /* ======= CV SECTION ======= */
+        .cv-section {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .cv-section a {
+            text-decoration: none;
+            background: #0044cc;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 10px;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+
+        .cv-section a:hover {
+            background: #0033aa;
+        }
+
+        /* ======= FOOTER ======= */
+        footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #0044cc;
+            color: white;
+            border-top: 3px solid #00cc99;
+            margin-top: 50px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #e6f7ff;
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #ffffff;
+        }
+
+        .footer-right {
+            font-size: 0.9em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>À Propos</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="skills.html">Compétences</a></li>
-                <li><a href="projects.html">Projets</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <h1>À Propos</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="skills.html">Compétences</a></li>
+            <li><a href="projects.html">Projets</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <section class="about">
-        <div class="about-content">
-            <img src="profile.jpg" alt="Naoufal Bouladjeraf" class="profile-pic">
-            <div class="about-text">
-                <h2>Qui suis-je ?</h2>
-                <p>Étudiant en deuxième année de BUT Informatique à l’IUT d’Orsay (Université Paris-Saclay), je suis passionné par le développement logiciel et les nouvelles technologies.</p>
-                <p>Au cours de ma formation, j’ai acquis des bases solides en programmation (Java, C, C++, Python, SQL) ainsi qu’en développement web (HTML, CSS, JavaScript, PHP). Mes expériences académiques m’ont permis de travailler sur des projets concrets, comme la conception de l’application de vote sécurisé <strong>VOTIFY</strong> et le développement de l’outil de suivi des Jeux Olympiques <strong>JO Companion</strong>. Ces projets m’ont appris à structurer du code de manière efficace, à gérer des bases de données et à collaborer au sein d’une équipe en appliquant des méthodologies agiles.</p>
-                <p>J’ai également acquis des compétences sur des outils tels que Visual Studio Code, Code::Blocks, Eclipse, IntelliJ IDEA, MySQL Developer, phpMyAdmin et des technologies comme Postman et GraphQL. En parallèle, j’ai une expérience avec Unity pour le développement de jeux et Visual Paradigm pour la modélisation UML.</p>
-                <p>Curieux et rigoureux, je suis motivé à continuer d’apprendre et à contribuer activement à des projets innovants. Mon sens de l’adaptation et ma capacité à résoudre des problèmes me permettent de m’impliquer rapidement dans de nouveaux environnements et d’apporter des solutions efficaces.</p>
+<section class="about">
+    <div class="about-container">
+        <img src="profile.jpg" alt="Naoufal Bouladjeraf" class="profile-pic">
+        <div class="about-text">
+            <h2>Qui suis-je ?</h2>
+            <p>Étudiant en deuxième année de BUT Informatique à l’IUT d’Orsay, passionné par le développement et les nouvelles technologies.</p>
+            <p>J’ai travaillé sur des projets comme <strong>VOTIFY</strong> et <strong>JO Companion</strong>, renforçant mes compétences en développement web et bases de données.</p>
+            <p>Motivé et rigoureux, je m’investis pleinement dans l’apprentissage de nouvelles technologies et méthodologies agiles.</p>
+
+            <div class="social-links">
+                <a href="https://github.com/nyb92" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/ton-linkedin" target="_blank">LinkedIn</a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <footer>
+<section class="experience">
+    <h2>Expérience Professionnelle</h2>
+    <ul>
+        <li>📌 **Éducateur sportif** (2022) - Formation et gestion des entraînements.</li>
+        <li>📌 **Livreur** (en cours) - Service client et gestion des relations.</li>
+        <li>📌 **Arbitre de football** (en cours) - Gestion des matchs et arbitrage.</li>
+    </ul>
+</section>
+
+<section class="cv-section">
+    <a href="cv.pdf" download>Télécharger mon CV</a>
+    <a href="cv.pdf" target="_blank">Visualiser mon CV</a>
+</section>
+
+<footer>
+    <div class="footer-links">
+        <a href="#">Mentions légales</a>
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">Conditions d’utilisation</a>
+    </div>
+    <div class="footer-right">
         <p>&copy; 2025 Naoufal Bouladjeraf</p>
-    </footer>
+    </div>
+</footer>
 </body>
 </html>

@@ -6,102 +6,190 @@
     <title>Contact - Portfolio Naoufal</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        /* ======= GLOBAL STYLES ======= */
         body {
-            background: linear-gradient(to bottom, #0f0f0f, #1a1a1a);
-            color: white;
+            background: linear-gradient(to bottom, #ffffff, #f0f9ff);
+            color: #0044cc;
             font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
         }
+
+        /* ======= HEADER ======= */
         header {
+            background: #0044cc;
+            color: white;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px;
+            padding: 20px 50px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
+
+        header h1 {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
         nav ul {
             display: flex;
             list-style: none;
             gap: 20px;
         }
+
         nav ul li a {
             text-decoration: none;
-            color: #bbb;
-            transition: color 0.3s;
-        }
-        nav ul li a:hover {
             color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: background 0.3s ease, color 0.3s ease;
         }
+
+        nav ul li a:hover {
+            background: #0033aa;
+        }
+
+        /* ======= CONTACT SECTION ======= */
         .contact {
             text-align: center;
             padding: 50px 20px;
         }
+
+        .contact h2 {
+            font-size: 2.5em;
+            color: #0044cc;
+        }
+
         .contact-container {
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            background: #222;
-            padding: 30px;
-            border-radius: 10px;
+            background: #e6f7ff;
+            padding: 40px;
+            border-radius: 15px;
             width: 50%;
             margin: auto;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
+        .contact-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 115, 230, 0.3);
+        }
+
         .contact-form {
             width: 100%;
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 20px;
         }
+
         .contact-form input, .contact-form textarea {
             width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1em;
-        }
-        .contact-form button {
-            background: #0073e6;
-            color: white;
-            padding: 12px;
-            border: none;
-            border-radius: 5px;
+            padding: 15px;
+            border: 2px solid #00cc99;
+            border-radius: 8px;
             font-size: 1.1em;
+            background: white;
+            color: #0044cc;
+            transition: border 0.3s, box-shadow 0.3s;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            border: 2px solid #0044cc;
+            box-shadow: 0 0 10px rgba(0, 68, 204, 0.7);
+            outline: none;
+        }
+
+        .contact-form button {
+            background: #00cc99;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2em;
             font-weight: bold;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
         }
+
         .contact-form button:hover {
-            background: #005bb5;
+            background: #009973;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 204, 153, 0.5);
+        }
+
+        /* ======= FOOTER ======= */
+        footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #0044cc;
+            color: white;
+            border-top: 3px solid #00cc99;
+            margin-top: 50px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #e6f7ff;
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #ffffff;
+        }
+
+        .footer-right {
+            font-size: 0.9em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Contact</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="about.html">À Propos</a></li>
-                <li><a href="skills.html">Compétences</a></li>
-                <li><a href="projects.html">Projets</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <h1>Contact</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="about.html">À Propos</a></li>
+            <li><a href="skills.html">Compétences</a></li>
+            <li><a href="projects.html">Projets</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <section class="contact">
-        <h2>Contactez-moi</h2>
-        <div class="contact-container">
-            <form class="contact-form">
-                <input type="text" placeholder="Nom" required>
-                <input type="email" placeholder="Email" required>
-                <textarea rows="5" placeholder="Votre message" required></textarea>
-                <button type="submit">Envoyer</button>
-            </form>
-        </div>
-    </section>
+<section class="contact">
+    <h2>Contactez-moi</h2>
+    <div class="contact-container">
+        <form class="contact-form">
+            <input type="text" placeholder="Nom" required>
+            <input type="email" placeholder="Email" required>
+            <textarea rows="5" placeholder="Votre message" required></textarea>
+            <button type="submit">Envoyer</button>
+        </form>
+    </div>
+</section>
 
-    <footer>
+<footer>
+    <div class="footer-links">
+        <a href="#">Mentions légales</a>
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">Conditions d’utilisation</a>
+    </div>
+    <div class="footer-right">
         <p>&copy; 2025 Naoufal Bouladjeraf</p>
-    </footer>
+    </div>
+</footer>
 </body>
 </html>

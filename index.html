@@ -5,31 +5,217 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Naoufal Bouladjeraf</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ======== GLOBAL STYLES ======== */
+        body {
+            background: linear-gradient(135deg, #ffffff, #e6f7ff);
+            color: #0044cc;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            transition: background 0.5s ease, color 0.5s ease;
+        }
+
+        /* ======== HEADER ======== */
+        header {
+            background: rgba(0, 68, 204, 0.9);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            position: sticky;
+            top: 0;
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background: #0033aa;
+        }
+
+        #dark-mode-toggle {
+            background: transparent;
+            border: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+
+        #dark-mode-toggle:hover {
+            transform: rotate(20deg);
+        }
+
+        /* ======== HERO SECTION ======== */
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 70vh;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            background: linear-gradient(to right, #0044cc, #00cc99);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #0044cc;
+            margin-bottom: 20px;
+        }
+
+        .profile-pic {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 4px solid #00cc99;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.08);
+            box-shadow: 0 10px 20px rgba(0, 204, 153, 0.5);
+        }
+
+        .cta-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .cta {
+            text-decoration: none;
+            background: #0044cc;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+            font-size: 1.2em;
+        }
+
+        .cta:hover {
+            background: #0033aa;
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 68, 204, 0.5);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ======== FOOTER ======== */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #0044cc;
+            color: white;
+            margin-top: 50px;
+            border-top: 3px solid #00cc99;
+        }
+
+        /* ======== DARK MODE ======== */
+        .dark-mode {
+            background: linear-gradient(135deg, #121212, #1a1a1a);
+            color: white;
+        }
+
+        .dark-mode header {
+            background: rgba(20, 20, 20, 0.9);
+        }
+
+        .dark-mode .hero h2 {
+            background: linear-gradient(to right, #00cc99, #0044cc);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .dark-mode .hero p {
+            color: white;
+        }
+
+        .dark-mode .cta {
+            background: #00cc99;
+        }
+
+        .dark-mode .cta:hover {
+            background: #009977;
+        }
+
+        .dark-mode footer {
+            background: #111;
+            border-top: 3px solid #00cc99;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Naoufal Bouladjeraf</h1>
-        <button id="dark-mode-toggle">🌙</button>
-        <nav>
-            <ul>
-                <li><a href="about.html">À Propos</a></li>
-                <li><a href="skills.html">Compétences</a></li>
-                <li><a href="projects.html">Projets</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <h1>Naoufal Bouladjeraf</h1>
+    <button id="dark-mode-toggle">🌙</button>
+    <nav>
+        <ul>
+            <li><a href="about.html">À Propos</a></li>
+            <li><a href="skills.html">Compétences</a></li>
+            <li><a href="projects.html">Projets</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <section class="hero">
-        <h2>Bienvenue sur mon Portfolio</h2>
-        <p>Découvrez mes compétences, projets et expériences dans le domaine du développement informatique.</p>
+<section class="hero">
+    <img src="profile.jpg" alt="Photo de Naoufal Bouladjeraf" class="profile-pic">
+    <h2>Bienvenue sur mon Portfolio</h2>
+    <p>Découvrez mes compétences, projets et expériences dans le domaine du développement informatique.</p>
+    <div class="cta-container">
         <a href="about.html" class="cta">En savoir plus</a>
-    </section>
+        <a href="contact.html" class="cta">Me Contacter</a>
+    </div>
+</section>
 
-    <footer>
-        <p>&copy; 2025 Naoufal Bouladjeraf - Portfolio</p>
-    </footer>
+<footer>
+    <p>&copy; 2025 Naoufal Bouladjeraf - Portfolio</p>
+</footer>
 
-    <script src="script.js"></script>
+<script>
+    document.getElementById("dark-mode-toggle").addEventListener("click", function() {
+        document.body.classList.toggle("dark-mode");
+    });
+</script>
 </body>
 </html>

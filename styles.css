@@ -16,8 +16,8 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
-    background: #181818;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background: #ff8b8b;
+    box-shadow: 0 4px 10px rgb(244, 195, 195);
 }
 
 h1 {
@@ -64,11 +64,11 @@ nav ul li a:hover {
 .hero {
     text-align: center;
     padding: 80px 20px;
-    background: linear-gradient(to right, #1e1e1e, #181818);
+    background: linear-gradient(to right, #1e1e1e, #93ffa1);
     border-radius: 10px;
     margin: 30px auto;
     width: 80%;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 15px rgba(139, 210, 234, 0.96);
 }
 
 .hero h2 {
@@ -103,15 +103,15 @@ nav ul li a:hover {
 footer {
     text-align: center;
     padding: 15px;
-    background: #181818;
+    background: #7bffb2;
     margin-top: 30px;
     font-size: 0.9em;
 }
 
 /* Mode sombre */
 .dark-mode {
-    background: #1e1e1e;
-    color: #ddd;
+    background: rgba(108, 108, 108, 0.83);
+    color: #393939;
 }
 
 .dark-mode header {
@@ -123,11 +123,11 @@ footer {
 }
 
 .dark-mode .cta {
-    background: #0073e6;
+    background: #5ea8ff;
 }
 
 .dark-mode .cta:hover {
-    background: #005bb5;
+    background: #a5c8ff;
 }
 
 /* Section About */
@@ -138,11 +138,11 @@ footer {
     flex-direction: column;
     text-align: center;
     padding: 80px 20px;
-    background: linear-gradient(to right, #1e1e1e, #181818);
+    background: linear-gradient(to right, #ff9090, #6fffe5);
     border-radius: 10px;
     margin: 40px auto;
     width: 80%;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 15px rgb(149, 255, 132);
     animation: fadeIn 1s ease-in-out;
 }
 
@@ -157,7 +157,7 @@ footer {
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 10px rgb(255, 88, 88);
     transition: transform 0.3s;
 }
 
@@ -181,6 +181,34 @@ footer {
     margin-bottom: 10px;
     line-height: 1.6;
 }
+
+/* Correction du footer */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Conteneur principal qui prend l’espace restant */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Footer qui reste en bas sans chevauchement */
+footer {
+    background-color: #2644c5;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+    position: relative;  /* Au lieu de absolute */
+}
+
+
 
 /* Animation d’apparition */
 @keyframes fadeIn {

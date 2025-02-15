@@ -3,153 +3,261 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projets - Portfolio Naoufal</title>
+    <title>Projets - Naoufal</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
+        /* ======== GLOBAL STYLES ======== */
         body {
-            background: linear-gradient(to bottom, #0f0f0f, #1a1a1a);
-            color: white;
+            background: radial-gradient(circle at top left, #ffffff, #f0f9ff);
+            color: #0044cc;
             font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
         }
+
+        /* ======== HEADER ======== */
         header {
+            background: #0044cc;
+            color: white;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px;
+            padding: 20px 50px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
+
+        header h1 {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
         nav ul {
             display: flex;
             list-style: none;
             gap: 20px;
         }
+
         nav ul li a {
             text-decoration: none;
-            color: #bbb;
-            transition: color 0.3s;
-        }
-        nav ul li a:hover {
             color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: background 0.3s ease, color 0.3s ease;
         }
+
+        nav ul li a:hover {
+            background: #0033aa;
+        }
+
         .projects {
             text-align: center;
             padding: 50px 20px;
         }
-        .filter-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-        .filter-btn {
-            background: #222;
-            color: white;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: all 0.3s;
-        }
-        .filter-btn.active, .filter-btn:hover {
-            background: #0073e6;
-            color: white;
-        }
+
+        /* ======== GRID DESIGN ======== */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
             padding: 20px;
         }
+
+        /* ======== PROJECT CARDS (MODERNIZED) ======== */
         .project-card {
-            background: #222;
-            border-radius: 15px;
+            position: relative;
+            width: 100%;
+            height: 320px;
+            cursor: pointer;
+            background: #e6f7ff;
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
             overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
         }
+
         .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 204, 153, 0.5);
+            background: #ccffee;
         }
+
         .project-card img {
             width: 100%;
-            height: 220px;
+            height: 100%;
             object-fit: cover;
+            border-radius: 20px;
+            filter: brightness(0.8);
+            transition: 0.3s;
         }
+
+        .project-card:hover img {
+            filter: brightness(1);
+        }
+
         .project-info {
-            padding: 20px;
+            position: absolute;
+            bottom: 20px;
+            background: rgba(0, 68, 204, 0.9);
+            padding: 15px;
+            border-radius: 10px;
+            color: white;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
         }
-        .tags {
-            margin-top: 10px;
+
+        .project-card:hover .project-info {
+            opacity: 1;
+            transform: translateY(0);
         }
-        .tags span {
-            background: #0073e6;
-            padding: 8px 12px;
-            margin-right: 5px;
+
+        /* ======== MODAL DESIGN ======== */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .modal-content {
+            background: rgba(255, 161, 161, 0.95);
+            padding: 40px;
             border-radius: 15px;
-            font-size: 14px;
+            text-align: center;
+            width: 60%;
+            max-width: 700px;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .close {
+            color: #000000;
+            font-size: 30px;
             font-weight: bold;
-            display: inline-block;
+            cursor: pointer;
+            position: absolute;
+            right: 20px;
+            top: 10px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Projets.</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="about.html">À Propos</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <h1>🌟 Projets</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="about.html">À Propos</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <section class="projects">
-        <div class="filter-buttons">
-            <button class="filter-btn active" data-category="all">All</button>
-            <button class="filter-btn" data-category="projects">Projects</button>
-            <button class="filter-btn" data-category="opensource">Open Source</button>
-        </div>
-
-        <div class="projects-grid">
-            <div class="project-card" data-category="projects">
-                <img src="img1.jpg" alt="Projet 1">
-                <div class="project-info">
-                    <h3>JO Companion</h3>
-                    <p>Application pour les JO 2023 - Java, SQL</p>
-                    <div class="tags">
-                        <span>Java</span> <span>SQL</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card" data-category="devtools">
-                <img src="img2.jpg" alt="Projet 2">
-                <div class="project-info">
-                    <h3>VOTIFY</h3>
-                    <p>Plateforme de vote démocratique - REST API</p>
-                    <div class="tags">
-                        <span>Java</span> <span>API</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card" data-category="designs">
-                <img src="img3.jpg" alt="Projet 3">
-                <div class="project-info">
-                    <h3>Portfolio Design</h3>
-                    <p>Maquette d’un portfolio moderne</p>
-                    <div class="tags">
-                        <span>Figma</span> <span>UX/UI</span>
-                    </div>
-                </div>
+<section class="projects">
+    <div class="projects-grid">
+        <!-- Projet JO Companion -->
+        <div class="project-card" onclick="openModal('modal1')">
+            <img src="img1.jpg" alt="JO Companion">
+            <div class="project-info">
+                <h3>JO Companion</h3>
+                <p>Gestion des épreuves et athlètes des JO.</p>
             </div>
         </div>
-    </section>
 
-    <footer>
-        <p>&copy; 2025 Naoufal Bouladjeraf</p>
-    </footer>
+        <!-- Projet VOTIFY -->
+        <div class="project-card" onclick="openModal('modal2')">
+            <img src="img2.jpg" alt="VOTIFY">
+            <div class="project-info">
+                <h3>VOTIFY</h3>
+                <p>Plateforme de vote sécurisé et démocratique.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Naoufal</p>
+</footer>
+
+<!-- Modal pour JO Companion -->
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal1')">&times;</span>
+        <h3>JO Companion</h3>
+        <p>
+            <strong>JO Companion</strong> est une application dédiée au **suivi des Jeux Olympiques 2024**, permettant aux utilisateurs de :
+        <ul>
+            <li>📅 **Accéder au planning** des épreuves en temps réel</li>
+            <li>🎟️ **Réserver des billets** via une billeterie intégrée</li>
+            <li>🏆 **Consulter les résultats** des compétitions en direct</li>
+            <li>👥 **Gérer et suivre les athlètes** et leurs performances</li>
+        </ul>
+        </p>
+        <p>
+            <strong>Mon rôle :</strong> J’ai conçu et **développé entièrement l’application en Java**, en m’occupant :
+        <ul>
+            <li>🔹 De l’architecture logicielle et de la structure du code</li>
+            <li>🔹 De la gestion et manipulation de bases de données SQL</li>
+            <li>🔹 De la mise en place de l’algorithme de gestion du planning</li>
+            <li>🔹 De la communication entre les différentes couches logicielles</li>
+        </ul>
+        Pour l’interface utilisateur, j’ai reçu un peu d’aide, mais **tout le backend et la logique applicative ont été développés par moi-même**.
+        </p>
+        <p>
+            <strong>Technologies utilisées :</strong> Java (JDK 17), SQL (MySQL), IntelliJ IDEA.
+        </p>
+    </div>
+</div>
+
+
+<!-- Modal pour VOTIFY -->
+<div id="modal2" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal2')">&times;</span>
+        <h3>VOTIFY</h3>
+        <p>
+            <strong>VOTIFY</strong> est une plateforme complète de vote en ligne qui permet :
+        <ul>
+            <li>📝 **De créer et gérer des votes sécurisés**</li>
+            <li>👥 **D’inviter et ajouter des membres** à des groupes de vote</li>
+            <li>🔒 **De garantir la sécurité des votes** grâce à une authentification robuste</li>
+            <li>💬 **D’intégrer un système de communication entre utilisateurs**</li>
+        </ul>
+        </p>
+        <p>
+            <strong>Mon rôle :</strong> J’ai développé **tout le backend** de l’application en utilisant **Laravel** pour l’API REST.
+            J’ai notamment :
+        <ul>
+            <li>🔹 Conçu **toute l’architecture du backend** en Laravel</li>
+            <li>🔹 Développé **les endpoints de l’API REST** pour gérer les votes</li>
+            <li>🔹 Sécurisé **les données et l’authentification** avec JWT</li>
+            <li>🔹 Utilisé MySQL pour **stocker et organiser les votes et utilisateurs**</li>
+        </ul>
+        </p>
+        <p>
+            <strong>Technologies utilisées :</strong> Laravel (PHP), MySQL, API REST, JWT Authentication.
+        </p>
+    </div>
+</div>
+
+<script>
+    function openModal(id) { document.getElementById(id).style.display = "flex"; }
+    function closeModal(id) { document.getElementById(id).style.display = "none"; }
+</script>
 </body>
 </html>
